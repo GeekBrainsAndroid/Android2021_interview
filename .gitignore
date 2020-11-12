@@ -45,3 +45,4 @@ packages/
 .externalNativeBuild
 .cxx
 local.properties
+$CACHE_FILE$

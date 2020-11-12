@@ -3,9 +3,12 @@
     <string name="point_1">Точка 1</string>
     <string name="point_2">Точка 2</string>
     <string name="point_3">Точка 3</string>
+    <string name="point_4">Точка 4</string>
     <string name="coord_x">Координата X</string>
     <string name="coord_y">Координата Y</string>
     <string name="calculate">Расчитать</string>
     <string name="perimeter">Периметр</string>
     <string name="area">Площадь</string>
+    <string name="triangle">Треугольник</string>
+    <string name="quadrilateral">Четырехугольник</string>
 </resources>

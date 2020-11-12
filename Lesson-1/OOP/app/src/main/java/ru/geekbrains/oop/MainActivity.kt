@@ -20,8 +20,12 @@ class MainActivity : AppCompatActivity(), View {
             presenter.getData(listOf(
                 Point(point1X.toDouble(), point1Y.toDouble()),
                 Point(point2X.toDouble(), point2Y.toDouble()),
-                Point(point3X.toDouble(), point3Y.toDouble())
-            ))
+                Point(point3X.toDouble(), point3Y.toDouble()),
+                Point(pointQ1X.toDouble(), pointQ1Y.toDouble()),
+                Point(pointQ2X.toDouble(), pointQ2Y.toDouble()),
+                Point(pointQ3X.toDouble(), pointQ3Y.toDouble()),
+                Point(pointQ4X.toDouble(), pointQ4Y.toDouble()),
+                ))
         }
     }
 

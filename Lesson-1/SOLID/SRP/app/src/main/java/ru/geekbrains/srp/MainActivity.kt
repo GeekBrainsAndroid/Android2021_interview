@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        circle.radius = 275
-        textArea.text = DecimalFormat(formatString).format(circle.area);
+        val circleCalc = Circle(275.0)
+        textArea.text = DecimalFormat(formatString).format(circleCalc.area);
     }
 }

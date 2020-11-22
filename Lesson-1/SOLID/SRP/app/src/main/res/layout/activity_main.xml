@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ru.geekbrains.srp.Circle
+    <ru.geekbrains.srp.CircleView
         android:id="@+id/circle"
         android:layout_width="200dp"
         android:layout_height="200dp"

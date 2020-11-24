@@ -3,4 +3,5 @@
     <string name="square">Квадрат</string>
     <string name="squareRoot">Корень</string>
     <string name="cube">Куб</string>
+    <string name="logarithm">Логарифм</string>
 </resources>

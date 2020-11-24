@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         buttonSqr.setOnClickListener(this)
         buttonSqrRoot.setOnClickListener(this)
         buttonCube.setOnClickListener(this)
+        buttonLn.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -30,6 +31,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.buttonCube ->{
                 result = value.pow(3)
+            }
+            R.id.buttonLn ->{
+                result = log(value, E)
             }
         }
         textResult.text = DecimalFormat("#0.00").format(result)

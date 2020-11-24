@@ -13,26 +13,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonSqr.setOnClickListener {
-            val value = editNumber.toDouble()
-            val result = value.pow(2)
-            textResult.text = DecimalFormat("#0.00").format(result)
+            calculate { it.pow(2) }
         }
         buttonSqrRoot.setOnClickListener {
-            val value = editNumber.toDouble()
-            val result = sqrt(value)
-            textResult.text = DecimalFormat("#0.00").format(result)
+            calculate { sqrt(it) }
         }
         buttonCube.setOnClickListener {
-            val value = editNumber.toDouble()
-            val result = value.pow(3)
-            textResult.text = DecimalFormat("#0.00").format(result)
+            calculate { it.pow(3) }
         }
         buttonLn.setOnClickListener {
-            val value = editNumber.toDouble()
-            val result = log(value, E)
-            textResult.text = DecimalFormat("#0.00").format(result)
+            calculate { log(it, E) }
         }
     }
 
+    private fun calculate(calc: (v: Double) -> Double) {
+        val value = editNumber.toDouble()
+        val result = calc(value)
+        textResult.text = result.toText()
+    }
+
     private fun EditText.toDouble() = this.text.toString().toDouble()
+
+    private fun Double.toText(pattern: String = "#0.00") = DecimalFormat(pattern).format(this)
 }

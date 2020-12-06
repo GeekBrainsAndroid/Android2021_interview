@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LSP</string>
+    <string name="orderProcessing">Обработка заказа</string>
+    <string name="quantityGoods">Количество товара</string>
+    <string name="price">Цена</string>
+    <string name="calculate">Расчитать</string>
+    <string name="totalAmount">Получившаяся сумма заказа</string>
+</resources>

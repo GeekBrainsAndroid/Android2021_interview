@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DIP</string>
+    <string name="name">Имя</string>
+    <string name="email">E-Mail</string>
+    <string name="convert">Сконвертировать</string>
+</resources>

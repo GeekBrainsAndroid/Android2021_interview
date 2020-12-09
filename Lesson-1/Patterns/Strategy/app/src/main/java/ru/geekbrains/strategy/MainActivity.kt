@@ -3,7 +3,10 @@ package ru.geekbrains.strategy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
+import ru.geekbrains.strategy.data.BubbleSortStrategy
 import ru.geekbrains.strategy.data.DigitList
+import ru.geekbrains.strategy.data.InsertionSortStrategy
+import ru.geekbrains.strategy.data.SortableStrategy
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonRandom.setOnClickListener {
-            digitList = DigitList()
+            digitList = DigitList(Sorterfactory())
             digitList.initRandom()
             sourceList.adapter = ListRecyclerViewAdapter(digitList)
         }
@@ -23,6 +26,14 @@ class MainActivity : AppCompatActivity() {
         buttonSort.setOnClickListener {
             sortedList = digitList.sort()
             destList.adapter = ListRecyclerViewAdapter(sortedList)
+        }
+    }
+
+    private fun Sorterfactory(): SortableStrategy {
+        return if (radioButtonBuble.isChecked) {
+            BubbleSortStrategy()
+        } else {
+            InsertionSortStrategy()
         }
     }
 }

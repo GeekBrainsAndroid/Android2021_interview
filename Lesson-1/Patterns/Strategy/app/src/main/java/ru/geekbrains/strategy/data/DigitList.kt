@@ -2,13 +2,13 @@ package ru.geekbrains.strategy.data
 
 import kotlin.random.Random
 
-class DigitList() {
+class DigitList(private val sorter: SortableStrategy) {
 
     private val digits = mutableListOf<Int>()
     val count: Int
         get() = digits.size
 
-    constructor(list: List<Int>) : this() {
+    constructor(list: List<Int>, sorter: SortableStrategy) : this(sorter) {
         for (element in list){
             digits.add(element)
         }
@@ -26,16 +26,8 @@ class DigitList() {
     fun sort(): DigitList{
         val list: MutableList<Int> = MutableList(count) {i -> this[i]}
 
-        for (i in 1 until list.size){
-            val temp = list[i]
-            var j = i - 1
-            while (j >= 0 && list[j] > temp){
-                list[j + 1] = list[j]
-                j--
-            }
-            list[j + 1] = temp
-        }
+        sorter.sort(list)
 
-        return DigitList(list)
+        return DigitList(list, sorter)
     }
 }

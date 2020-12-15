@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        greetable = Greeting(this.baseContext)
+        greetable = GreetingToast(Greeting(this.baseContext), this.baseContext)
         button.setOnClickListener{
             this.textView.text = greetable.sayHello(textEdit.text.toString())
         }

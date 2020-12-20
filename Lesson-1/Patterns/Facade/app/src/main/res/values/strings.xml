@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Facade</string>
+    <string name="x">X</string>
+    <string name="p2">2</string>
+    <string name="plus">+</string>
+    <string name="eq0">=0</string>
+    <string name="_1">1</string>
+    <string name="eq">=</string>
+    <string name="calculate">Расчитать</string>
+</resources>

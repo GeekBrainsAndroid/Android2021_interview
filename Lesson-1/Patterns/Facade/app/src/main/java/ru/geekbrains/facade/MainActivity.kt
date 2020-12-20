@@ -14,14 +14,15 @@ class MainActivity : AppCompatActivity() {
             val a = editA.toDouble()
             val b = editB.toDouble()
             val c = editC.toDouble()
-            val quadraticEquation = QuadraticEquation(a, b, c)
-            val d = quadraticEquation.calcDiscriminant()
-            if (d < 0) {
+            val quadraticEquationFacade = QuadraticEquationFacade(a, b, c)
+            try{
+                val roots = quadraticEquationFacade.calculate()
+                textXValue1.text = roots.root1.toString()
+                textXValue2.text = roots.root2.toString()
+            }
+            catch (e: NegativeDiscriminantException){
                 textXValue1.text = "Нет действительных корней"
                 textXValue2.text = "Нет действительных корней"
-            } else {
-                textXValue1.text = quadraticEquation.calcRoot1(d).toString()
-                textXValue2.text = quadraticEquation.calcRoot2(d).toString()
             }
         }
     }

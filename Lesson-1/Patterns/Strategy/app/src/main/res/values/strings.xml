@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Strategy</string>
+    <string name="sorting">Сортировать</string>
+    <string name="generate">Генерация</string>
+    <string name="sort">Сортировка</string>
+    <string name="insertion">вставками</string>
+    <string name="buble">пузырьком</string>
+</resources>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:ems="3"
+        android:inputType="numberSigned|numberDecimal"
+        android:text=""
+        android:textSize="@dimen/editSize"
+        app:layout_constraintEnd_toStartOf="@+id/textX"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/x"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBaseline_toBaselineOf="@id/editA"
+        app:layout_constraintEnd_toStartOf="@+id/textP2"
+        app:layout_constraintStart_toEndOf="@+id/editA" />
+
+    <TextView
+        android:id="@+id/textP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/p2"
+        app:layout_constraintEnd_toStartOf="@+id/textPlus"
+        app:layout_constraintStart_toEndOf="@+id/textX"
+        app:layout_constraintTop_toTopOf="@+id/editA" />
+
+    <TextView
+        android:id="@+id/textPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/plus"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBaseline_toBaselineOf="@id/editA"
+        app:layout_constraintEnd_toStartOf="@+id/editB"
+        app:layout_constraintStart_toEndOf="@+id/textP2" />
+
+    <EditText
+        android:id="@+id/editB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="3"
+        android:inputType="numberSigned|numberDecimal"
+        android:text=""
+        android:textSize="@dimen/editSize"
+        app:layout_constraintEnd_toStartOf="@+id/textX2"
+        app:layout_constraintStart_toEndOf="@+id/textPlus"
+        app:layout_constraintTop_toTopOf="@+id/editA" />
+
+    <TextView
+        android:id="@+id/textPlus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/plus"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBaseline_toBaselineOf="@id/editA"
+        app:layout_constraintEnd_toStartOf="@+id/editC"
+        app:layout_constraintStart_toEndOf="@+id/textX2" />
+
+    <TextView
+        android:id="@+id/textX2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+
+        android:text="@string/x"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBaseline_toBaselineOf="@id/editA"
+        app:layout_constraintEnd_toStartOf="@+id/textPlus2"
+        app:layout_constraintStart_toEndOf="@+id/editB" />
+
+    <EditText
+        android:id="@+id/editC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="3"
+        android:inputType="numberSigned|numberDecimal"
+        android:text=""
+        android:textSize="@dimen/editSize"
+        app:layout_constraintEnd_toStartOf="@+id/textEq0"
+        app:layout_constraintStart_toEndOf="@+id/textPlus2"
+        app:layout_constraintTop_toTopOf="@+id/editA" />
+
+    <TextView
+        android:id="@+id/textEq0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="8dp"
+        android:text="@string/eq0"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBaseline_toBaselineOf="@id/editA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editC" />
+
+    <Button
+        android:id="@+id/buttonCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/calculate"
+        app:layout_constraintEnd_toEndOf="@+id/textEq0"
+        app:layout_constraintTop_toBottomOf="@+id/editC" />
+
+    <TextView
+        android:id="@+id/textX_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/x"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintEnd_toStartOf="@+id/textI1"
+        app:layout_constraintStart_toStartOf="@+id/editA"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalc" />
+
+    <TextView
+        android:id="@+id/textI1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/_1"
+        app:layout_constraintBottom_toBottomOf="@+id/textX_1"
+        app:layout_constraintEnd_toStartOf="@+id/textEq_1"
+        app:layout_constraintStart_toEndOf="@+id/textX_1" />
+
+    <TextView
+        android:id="@+id/textEq_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eq"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toBottomOf="@+id/textX_1"
+        app:layout_constraintEnd_toStartOf="@+id/textXValue1"
+        app:layout_constraintStart_toEndOf="@+id/textI1" />
+
+    <TextView
+        android:id="@+id/textXValue1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text=" "
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toBottomOf="@+id/textX_1"
+        app:layout_constraintStart_toEndOf="@+id/textEq_1" />
+
+    <TextView
+        android:id="@+id/textX_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/x"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintEnd_toStartOf="@+id/textI2"
+        app:layout_constraintStart_toStartOf="@+id/editA"
+        app:layout_constraintTop_toBottomOf="@+id/textX_1" />
+
+    <TextView
+        android:id="@+id/textI2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/p2"
+        app:layout_constraintBottom_toBottomOf="@+id/textX_2"
+        app:layout_constraintEnd_toStartOf="@+id/textEq_2"
+        app:layout_constraintStart_toEndOf="@+id/textX_2" />
+
+    <TextView
+        android:id="@+id/textEq_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eq"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toBottomOf="@+id/textX_2"
+        app:layout_constraintEnd_toStartOf="@+id/textXValue2"
+        app:layout_constraintStart_toEndOf="@+id/textI2" />
+
+    <TextView
+        android:id="@+id/textXValue2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text=" "
+        android:textSize="@dimen/textSize"
+        app:layout_constraintBottom_toBottomOf="@+id/textX_2"
+        app:layout_constraintStart_toEndOf="@+id/textEq_2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

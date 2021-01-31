@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Threads</string>
+    <string name="handler_thread">Handler Thread</string>
+    <string name="thread_with_view_post">Thread with View.post</string>
+    <string name="thread_with_activity_runuithread">Thread with Activity.runUiThread</string>
+    <string name="thread_with_handler_post">Thread with Handler.post</string>
+    <string name="delay">Delay</string>
+</resources>

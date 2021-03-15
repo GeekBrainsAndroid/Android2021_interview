@@ -5,10 +5,9 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.geekbrains.dagger2application.convert.IConverter
 import javax.inject.Inject
+import javax.inject.Named
 
 class MainActivity : AppCompatActivity(), MainView {
-    @Inject
-    lateinit var converter: IConverter
     @Inject
     lateinit var presenter: MainPresenter
 

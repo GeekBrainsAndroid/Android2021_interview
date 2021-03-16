@@ -3,27 +3,30 @@ package ru.geekbrains.dagger2application
 import ru.geekbrains.dagger2application.convert.IConverter
 import javax.inject.Inject
 
-class MainPresenter @Inject constructor(private val converter: IConverter) : IMainPresenter {
+class MainPresenter2 : IMainPresenter {
     private var view: MainView? = null
 
+    @Inject
+    lateinit var converter: IConverter
+
+    init {
+        App.instance.component.inject(this)
+    }
+
     override fun attach(view: MainView) {
-        if (this.view != view) {
-            this.view = view
-        }
+        this.view = view
     }
 
     override fun detach(view: MainView) {
-        if (this.view == view) {
-            this.view = null
-        }
+        this.view = null
     }
 
-    override fun convert(){
+    override fun convert() {
         if (view == null){
             return
         }
-        val value = view!!.value
+        val value = view!!.value2
         val result = converter.convert(value)
-        view!!.renderResult(result)
+        view!!.renderResult2(result)
     }
 }

@@ -5,4 +5,7 @@ interface MainView {
     fun renderResult(value: Double)
     val value2: Int
     fun renderResult2(value: Double)
+    fun countInstancePresenter1(value: Int)
+    fun countInstancePresenter2(value: Int)
+    fun countInstanceConvertHelper(value: Int)
 }

@@ -9,6 +9,7 @@ class App : Application() {
     }
 
     lateinit var component: AppComponent
+    var activityComponent: ActivityComponent? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -17,6 +18,17 @@ class App : Application() {
         component = DaggerAppComponent.builder()
                 .appModule(AppModule(this))
                 .build()
+    }
+
+    fun addActivityComponent(): ActivityComponent {
+        if (activityComponent == null){
+            activityComponent = component.addActivityComponent(ActivityModule())
+        }
+        return activityComponent!!
+    }
+
+    fun clearActivityComponent() {
+        activityComponent = null
     }
 }
 

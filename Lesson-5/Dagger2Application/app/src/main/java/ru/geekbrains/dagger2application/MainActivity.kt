@@ -17,6 +17,9 @@ class MainActivity : AppCompatActivity(), MainView {
     @field:Named(namepresenter2)
     lateinit var presenter2: IMainPresenter
 
+    @Inject
+    lateinit var convertHelper: ConvertHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,17 +33,27 @@ class MainActivity : AppCompatActivity(), MainView {
         buttonConvert2.setOnClickListener {
             presenter2.convert()
         }
+
+        buttonInstance.setOnClickListener {
+            presenter.getCountInstance()
+            presenter2.getCountInstance()
+            convertHelper.getCountInstance()
+        }
     }
 
     override fun onStart() {
         super.onStart()
+        App.instance.addActivityComponent()
         presenter.attach(this)
         presenter2.attach(this)
+        convertHelper.attach(this)
     }
 
     override fun onStop(){
         presenter.detach(this)
         presenter2.detach(this)
+        convertHelper.detach(this)
+        App.instance.clearActivityComponent()
         super.onStop()
     }
 
@@ -56,5 +69,17 @@ class MainActivity : AppCompatActivity(), MainView {
 
     override fun renderResult2(value: Double) {
         textResult2.text = value.toString()
+    }
+
+    override fun countInstancePresenter1(value: Int) {
+        textPres1.text = value.toString()
+    }
+
+    override fun countInstancePresenter2(value: Int) {
+        textPres2.text = value.toString()
+    }
+
+    override fun countInstanceConvertHelper(value: Int) {
+        textConverHelper.text = value.toString()
     }
 }

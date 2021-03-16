@@ -10,6 +10,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [ConvertModule::class, AppModule::class, PresenterModule::class, Presenter2Module::class])
 interface AppComponent {
+    fun addActivityComponent(module: ActivityModule): ActivityComponent
+
     fun getConverter(): Converter
     fun getConvertVelocity(): ConvertVelocity
 

@@ -11,6 +11,7 @@ class MainPresenter2 : IMainPresenter {
 
     init {
         App.instance.component.inject(this)
+        countInstances++
     }
 
     override fun attach(view: MainView) {
@@ -28,5 +29,16 @@ class MainPresenter2 : IMainPresenter {
         val value = view!!.value2
         val result = converter.convert(value)
         view!!.renderResult2(result)
+    }
+
+    override fun getCountInstance() {
+        if (view == null){
+            return
+        }
+        view!!.countInstancePresenter2(countInstances)
+    }
+
+    companion object{
+        var countInstances: Int = 0
     }
 }

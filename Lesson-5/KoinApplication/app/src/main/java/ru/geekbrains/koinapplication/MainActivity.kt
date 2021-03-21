@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
+import org.koin.android.scope.AndroidScopeComponent
+import org.koin.androidx.scope.activityScope
+import org.koin.core.scope.Scope
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : AppCompatActivity(), AndroidScopeComponent, MainView {
+    override val scope : Scope by activityScope()
 
     private val presenter: IMainPresenter by inject()
 

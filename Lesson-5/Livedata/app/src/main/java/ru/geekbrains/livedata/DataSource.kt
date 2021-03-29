@@ -3,14 +3,19 @@ package ru.geekbrains.livedata
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Looper
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 
 class DataSource {
 
-    var counterString = MutableLiveData<String>()
+    var counterInt = MutableLiveData<Int>()
+    var counterString: LiveData<String> = Transformations.map(counterInt) {
+        it.toString()
+    }
 
     fun start(){
-        counterString.value = "0"
+        counterInt.value = 0
         val handlerThread = HandlerThread("MyHandler")
         handlerThread.start()
         val handler = Handler(handlerThread.looper)
@@ -21,11 +26,9 @@ class DataSource {
                 Thread.sleep(1000)
                 counter++
                 handlerUi.post {
-                    counterString.value = counter.toString()
+                    counterInt.value = counter
                 }
             }
         }
     }
-
-
 }

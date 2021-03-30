@@ -15,10 +15,7 @@ class ValuteRecyclerViewAdapter() : RecyclerView.Adapter<ValuteRecyclerViewAdapt
 
     class ValuteHolder(private var item: ItemLayoutBinding) : RecyclerView.ViewHolder(item.root) {
         fun bind(valute: Valute){
-            item.textCharCode.text = valute.charCode
-            item.textNominal.text = valute.nominal.toString()
-            item.textName.text = valute.name
-            item.textValue.text = valute.value.toString()
+            item.valute = valute
         }
     }
 
@@ -27,7 +24,6 @@ class ValuteRecyclerViewAdapter() : RecyclerView.Adapter<ValuteRecyclerViewAdapt
         val item = ItemLayoutBinding.inflate(layoutInflater, parent, false)
         return ValuteHolder(item)
     }
-
 
     override fun getItemCount(): Int = valutes.size
 

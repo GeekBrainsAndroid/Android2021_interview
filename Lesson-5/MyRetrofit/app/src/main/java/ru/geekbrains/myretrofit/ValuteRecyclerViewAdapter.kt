@@ -7,29 +7,27 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ru.geekbrains.myretrofit.model.Valute
 import kotlinx.android.synthetic.main.item_layout.view.*
+import ru.geekbrains.myretrofit.databinding.ItemLayoutBinding
 
 class ValuteRecyclerViewAdapter() : RecyclerView.Adapter<ValuteRecyclerViewAdapter.ValuteHolder>()  {
 
     var valutes: List<Valute> = listOf()
 
-    class ValuteHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val txtCharCode: TextView = view.textCharCode
-        val txtNominal: TextView = view.textNominal
-        val txtName: TextView = view.textName
-        val txtValue: TextView = view.textValue
-
+    class ValuteHolder(private var item: ItemLayoutBinding) : RecyclerView.ViewHolder(item.root) {
         fun bind(valute: Valute){
-            txtCharCode.text = valute.charCode
-            txtNominal.text = valute.nominal.toString()
-            txtName.text = valute.name
-            txtValue.text = valute.value.toString()
+            item.textCharCode.text = valute.charCode
+            item.textNominal.text = valute.nominal.toString()
+            item.textName.text = valute.name
+            item.textValue.text = valute.value.toString()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ValuteHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
-        return ValuteHolder(itemView)
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val item = ItemLayoutBinding.inflate(layoutInflater, parent, false)
+        return ValuteHolder(item)
     }
+
 
     override fun getItemCount(): Int = valutes.size
 

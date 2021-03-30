@@ -5,6 +5,11 @@ plugins {
 }
 
 android {
+
+    viewBinding {
+        enabled = true
+    }
+
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 

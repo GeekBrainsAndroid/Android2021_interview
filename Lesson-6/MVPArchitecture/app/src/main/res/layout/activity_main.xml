@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+    <FrameLayout
+            android:id="@+id/success_linear_layout"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_activity_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/search_fab"
+                android:src="@drawable/ic_search"
+                android:layout_width="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <FrameLayout
+            android:id="@+id/loading_frame_layout"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+
+        <ProgressBar
+                android:layout_gravity="center"
+                android:id="@+id/progress_bar_horizontal"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <ProgressBar
+                android:layout_gravity="center"
+                android:id="@+id/progress_bar_round"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:id="@+id/error_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/error_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/error_textview_stub"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/reload_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reload_button"/>
+    </LinearLayout>
+</FrameLayout>

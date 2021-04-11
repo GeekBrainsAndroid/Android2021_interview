@@ -1,0 +1,9 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle">
+    <solid
+            android:color="@color/color_white"/>
+    <corners
+            android:topLeftRadius="@dimen/bottom_sheet_dialog_corner_radius"
+            android:topRightRadius="@dimen/bottom_sheet_dialog_corner_radius"/>
+
+</shape>

@@ -1,0 +1,46 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="BaseTextStyle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/color_text_main</item>
+        <item name="android:textSize">@dimen/text_size_standard</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="HeaderTextStyle" parent="BaseTextStyle">
+        <item name="android:textColor">@color/color_text_header</item>
+        <item name="android:textSize">@dimen/text_size_standard_header</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewButtonStyle" parent="BaseTextStyle">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="BaseEditTextStyle">
+        <item name="android:background">@null</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="BaseFlatButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_dialog_background</item>
+    </style>
+</resources>

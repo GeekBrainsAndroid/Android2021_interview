@@ -1,0 +1,26 @@
+<resources>
+    //Margins
+    <dimen name="hairline">1px</dimen>
+    <dimen name="margin_xxxx_small">2dp</dimen>
+    <dimen name="margin_xxx_small">3dp</dimen>
+    <dimen name="margin_xx_small">5dp</dimen>
+    <dimen name="margin_x_small">7dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium">15dp</dimen>
+    <dimen name="margin_x_medium">17dp</dimen>
+    <dimen name="margin_xx_medium">20dp</dimen>
+    <dimen name="margin_xxx_medium">25dp</dimen>
+    <dimen name="margin_large">30dp</dimen>
+    <dimen name="margin_x_large">35dp</dimen>
+    <dimen name="margin_xx_large">40dp</dimen>
+    <dimen name="margin_xxx_large">45dp</dimen>
+
+    //Text size
+    <dimen name="text_size_tip">10sp</dimen>
+    <dimen name="text_size_standard">17sp</dimen>
+    <dimen name="text_size_standard_header">20sp</dimen>
+    <dimen name="text_size_large">25sp</dimen>
+
+    //Corner radius
+    <dimen name="bottom_sheet_dialog_corner_radius">10dp</dimen>
+</resources>

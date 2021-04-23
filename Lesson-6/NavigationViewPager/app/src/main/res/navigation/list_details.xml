@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_details"
+    app:startDestination="@id/viewPagerFragment">
+
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="ru.geekbrains.tabbed.ui.main.ViewPagerFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_view_pager" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="ru.geekbrains.tabbed.ui.screen.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="paramId"
+            android:defaultValue="Hello from List fragment"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_listFragment_to_DetailsFragment"
+        app:destination="@id/detailsFragment">
+        <argument
+            android:name="paramId"
+            android:defaultValue="Hello from Home fragment"
+            app:argType="string" />
+    </action>
+
+</navigation>

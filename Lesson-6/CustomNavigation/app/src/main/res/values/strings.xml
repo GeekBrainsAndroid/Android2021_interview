@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Custom Navigation</string>
+    <string name="details">Details</string>
+    <string name="something_list">It\'s a something list</string>
+    <string name="details_text">It\'s a details fragment</string>
+    <string name="settings">Settings</string>
+</resources>

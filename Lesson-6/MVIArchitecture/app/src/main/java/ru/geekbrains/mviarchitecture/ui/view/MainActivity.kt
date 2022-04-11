@@ -42,6 +42,13 @@ class MainActivity : AppCompatActivity() {
                 mainViewModel.userIntent.send(MainIntent.FetchDaily)
             }
         }
+
+        buttonTest.setOnClickListener {
+            lifecycleScope.launch {
+                mainViewModel.userIntent.send(MainIntent.Test)
+            }
+        }
+
     }
 
     private fun initRecycler() {
@@ -79,9 +86,16 @@ class MainActivity : AppCompatActivity() {
                     is MainState.Error -> {
                         renderError(it)
                     }
+                    is MainState.Test -> {
+                        test()
+                    }
                 }
             }
         }
+    }
+
+    private fun test() {
+        println("Test Activity")
     }
 
     private fun renderError(it: MainState.Error) {

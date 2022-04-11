@@ -32,9 +32,15 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
             userIntent.consumeAsFlow().collect {
                 when (it) {
                     is MainIntent.FetchDaily -> fetchDaily()
+                    is MainIntent.Test -> test()
                 }
             }
         }
+    }
+
+    private fun test() {
+        println("Test viewModel")
+        setStateValue(MainState.Test)
     }
 
     private fun fetchDaily() {

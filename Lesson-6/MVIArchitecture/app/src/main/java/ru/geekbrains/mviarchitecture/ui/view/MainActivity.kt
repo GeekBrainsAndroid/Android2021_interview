@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
 
         buttonTest.setOnClickListener {
             lifecycleScope.launch {
-                mainViewModel.userIntent.send(MainIntent.Test)
+            //    mainViewModel.userIntent.send(MainIntent.Test)
+                mainViewModel.userIntent.send(MainIntent.TestData)
             }
         }
 
@@ -89,9 +90,17 @@ class MainActivity : AppCompatActivity() {
                     is MainState.Test -> {
                         test()
                     }
+
+                    is MainState.TestData -> {
+                        testData(it)
+                    }
                 }
             }
         }
+    }
+
+    private fun testData(it: MainState.TestData) {
+        println("TestData Activity ${it.i}")
     }
 
     private fun test() {

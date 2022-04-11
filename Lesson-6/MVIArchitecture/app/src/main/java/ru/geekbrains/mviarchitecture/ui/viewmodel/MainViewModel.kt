@@ -33,9 +33,17 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
                 when (it) {
                     is MainIntent.FetchDaily -> fetchDaily()
                     is MainIntent.Test -> test()
+                    is MainIntent.TestData -> testData()
                 }
             }
         }
+    }
+    private var count = 0
+
+    private fun testData() {
+        count++
+        println("TestData viewModel $count")
+        setStateValue(MainState.TestData(count))
     }
 
     private fun test() {

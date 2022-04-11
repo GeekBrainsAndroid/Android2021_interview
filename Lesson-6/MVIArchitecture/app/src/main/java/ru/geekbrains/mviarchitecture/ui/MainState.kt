@@ -8,4 +8,5 @@ sealed class MainState {
     data class DailyData(val dailyModel: Model) : MainState()
     data class Error(val error: String?) : MainState()
     object Test : MainState()
+    data class TestData(val i: Int): MainState()
 }

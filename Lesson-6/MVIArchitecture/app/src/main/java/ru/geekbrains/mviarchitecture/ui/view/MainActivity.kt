@@ -9,7 +9,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import ru.geekbrains.mviarchitecture.R
 import ru.geekbrains.mviarchitecture.network.ApiHelperImpl
@@ -45,8 +47,9 @@ class MainActivity : AppCompatActivity() {
 
         buttonTest.setOnClickListener {
             lifecycleScope.launch {
-            //    mainViewModel.userIntent.send(MainIntent.Test)
-                mainViewModel.userIntent.send(MainIntent.TestData)
+                mainViewModel.userIntent.send(MainIntent.NewTest)
+              //  mainViewModel.userIntent.send(MainIntent.Test)
+              //  mainViewModel.userIntent.send(MainIntent.TestData)
             }
         }
 
@@ -73,6 +76,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel() {
+
+        lifecycleScope.launchWhenStarted {
+            mainViewModel.event
+                .onEach { handleSingleEvent(it) }
+                .catch { }
+                .collect()
+        }
+
+
+
         lifecycleScope.launch {
             mainViewModel.state.collect {
                 when (it) {
@@ -97,6 +110,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun handleSingleEvent(it: MainIntent) {
+        println("NewTest Activity")
     }
 
     private fun testData(it: MainState.TestData) {

@@ -6,6 +6,8 @@ sealed class MainIntent
 
     object Test: MainIntent()
 
+    object NewTest: MainIntent()
+
     object TestData: MainIntent()
 
 }

@@ -7,4 +7,7 @@ sealed class MainState {
     object Loading : MainState()
     data class DailyData(val dailyModel: Model) : MainState()
     data class Error(val error: String?) : MainState()
+    object Test : MainState()
+    object NewTest: MainState()
+    data class TestData(val i: Int): MainState()
 }

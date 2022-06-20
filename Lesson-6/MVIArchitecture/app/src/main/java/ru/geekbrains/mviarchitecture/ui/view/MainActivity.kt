@@ -9,7 +9,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import ru.geekbrains.mviarchitecture.R
 import ru.geekbrains.mviarchitecture.network.ApiHelperImpl
@@ -42,6 +44,15 @@ class MainActivity : AppCompatActivity() {
                 mainViewModel.userIntent.send(MainIntent.FetchDaily)
             }
         }
+
+        buttonTest.setOnClickListener {
+            lifecycleScope.launch {
+                mainViewModel.userIntent.send(MainIntent.NewTest)
+              //  mainViewModel.userIntent.send(MainIntent.Test)
+              //  mainViewModel.userIntent.send(MainIntent.TestData)
+            }
+        }
+
     }
 
     private fun initRecycler() {
@@ -65,6 +76,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel() {
+
+        lifecycleScope.launchWhenStarted {
+            mainViewModel.event
+                .onEach { handleSingleEvent(it) }
+                .catch { }
+                .collect()
+        }
+
+
+
         lifecycleScope.launch {
             mainViewModel.state.collect {
                 when (it) {
@@ -79,9 +100,28 @@ class MainActivity : AppCompatActivity() {
                     is MainState.Error -> {
                         renderError(it)
                     }
+                    is MainState.Test -> {
+                        test()
+                    }
+
+                    is MainState.TestData -> {
+                        testData(it)
+                    }
                 }
             }
         }
+    }
+
+    private fun handleSingleEvent(it: MainIntent) {
+        println("NewTest Activity")
+    }
+
+    private fun testData(it: MainState.TestData) {
+        println("TestData Activity ${it.i}")
+    }
+
+    private fun test() {
+        println("Test Activity")
     }
 
     private fun renderError(it: MainState.Error) {

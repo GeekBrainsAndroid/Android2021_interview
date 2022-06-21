@@ -46,3 +46,9 @@ packages/
 .cxx
 local.properties
 $CACHE_FILE$
+/Lesson-2/01-CheckConcurrency/.idea/
+/Lesson-2/01-CheckConcurrency/lib/
+/Lesson-2/01-CheckConcurrency/out/
+/Lesson-2/02-CheckCopyOnWrite/.idea/
+/Lesson-2/02-CheckCopyOnWrite/out/
+*.class

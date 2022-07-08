@@ -48,8 +48,6 @@ class MainActivity : AppCompatActivity() {
         buttonTest.setOnClickListener {
             lifecycleScope.launch {
                 mainViewModel.userIntent.send(MainIntent.NewTest)
-              //  mainViewModel.userIntent.send(MainIntent.Test)
-              //  mainViewModel.userIntent.send(MainIntent.TestData)
             }
         }
 

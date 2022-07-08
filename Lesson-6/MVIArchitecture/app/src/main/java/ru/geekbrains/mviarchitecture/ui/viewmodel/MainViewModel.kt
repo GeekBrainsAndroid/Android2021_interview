@@ -49,8 +49,6 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
         }
     }
 
-
-
     private var count = 0
 
     private fun testData() {
@@ -65,14 +63,6 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
         delay(1)
         setStateValue(MainState.Test)
     }
-
-//    println("Test viewModel")
-//    setStateValue(MainState.Idle)
-//    delay(1)
-
-//    println("Test viewModel")
-//    setStateValue(MainState.Idle)
-//    delay(1)
 
     private fun fetchDaily() {
         viewModelScope.launch {
